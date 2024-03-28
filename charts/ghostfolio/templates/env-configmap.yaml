@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    io.kompose.service: ghostfolio-env
+  name: env
+data:
+  COMPOSE_PROJECT_NAME: "{{ .Values.composeProjectName }}"
+  POSTGRES_DB: "{{ .Values.postgresdb }}"
+  POSTGRES_PASSWORD: "{{ .Values.postgresPassword }}"
+  POSTGRES_USER: "{{ .Values.postgresUser }}"
+  REDIS_HOST: "{{ .Values.redisHost }}"
+  REDIS_PASSWORD: "{{ .Values.redisPassword }}"
+  REDIS_PORT: "{{ .Values.redisPort }}"
+  ACCESS_TOKEN_SALT: "{{ .Values.accessTokenSalt }}"
+  DATABASE_URL: "{{ .Values.databaseUrl }}"
+  JWT_SECRET_KEY: "{{ .Values.jwtSecretKey }}"
