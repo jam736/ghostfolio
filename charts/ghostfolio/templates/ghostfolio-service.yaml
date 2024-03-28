@@ -8,6 +8,7 @@ metadata:
     io.kompose.service: ghostfolio
   name: ghostfolio
 spec:
+  type: LoadBalancer
   ports:
     - name: ghostfolio-svc
       port: {{ .Values.ghostfolioport }}
