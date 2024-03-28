@@ -11,8 +11,8 @@ spec:
   type: LoadBalancer
   ports:
     - name: ghostfolio-svc
-      nodePort: 3333
-      port: 3333
-      targetPort: 3333
+      nodePort: 31888
+      port: 31888
+      targetPort: 31888
   selector:
     io.kompose.service: ghostfolio

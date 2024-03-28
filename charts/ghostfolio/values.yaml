@@ -13,4 +13,4 @@ redisPort: "6379"
 accessTokenSalt: Td87itHmjmVYSZcX
 databaseUrl: "postgresql://{{ .Values.postgresUser }}:{{ .Values.postgresPassword }}@localhost:5432/{{ .Values.postgresdb }}?connect_timeout=300&sslmode=prefer"
 jwtSecretKey: vIoIC6zXGVPH5zVT
-ghostfolioport: 3333
+ghostfolioport: 31888

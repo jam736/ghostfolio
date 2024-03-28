@@ -25,8 +25,8 @@ spec:
         - image: ghostfolio/ghostfolio:latest
           name: ghostfolio
           ports:
-            - containerPort: 3333
-              hostPort: 3333
+            - containerPort: 31888
+              hostPort: 31888
               protocol: TCP
           env:
             - name: ACCESS_TOKEN_SALT
