@@ -10,7 +10,7 @@ metadata:
 spec:
   ports:
     - name: "3333"
-      port: " {{ .Values.ghostfolioport }}"
-      targetPort: " {{ .Values.ghostfolioport }}"
+      port: "{{ .Values.ghostfolioport }}"
+      targetPort: "{{ .Values.ghostfolioport }}"
   selector:
     io.kompose.service: ghostfolio
