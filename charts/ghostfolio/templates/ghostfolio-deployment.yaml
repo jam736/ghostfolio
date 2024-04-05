@@ -22,7 +22,7 @@ spec:
         io.kompose.service: ghostfolio
     spec:
       containers:
-        - image: ghostfolio/ghostfolio:2.68.0
+        - image: ghostfolio/ghostfolio:2.70.0
           name: ghostfolio
           ports:
             - containerPort: 3333
