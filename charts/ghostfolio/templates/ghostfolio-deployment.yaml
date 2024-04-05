@@ -22,11 +22,10 @@ spec:
         io.kompose.service: ghostfolio
     spec:
       containers:
-        - image: ghostfolio/ghostfolio:latest
+        - image: ghostfolio/ghostfolio:2.68.0
           name: ghostfolio
           ports:
-            - containerPort: 31888
-              hostPort: 31888
+            - containerPort: 3333
               protocol: TCP
           env:
             - name: ACCESS_TOKEN_SALT
@@ -81,11 +80,13 @@ spec:
                 configMapKeyRef:
                   key: REDIS_PORT
                   name: env
-          livenessProbe:
-            exec:
-              command:
-                - "curl -f http://localhost:{{ .Values.ghostfolioport }}/api/v1/health"
-            failureThreshold: 5
-            periodSeconds: 10
-            timeoutSeconds: 5
+#          livenessProbe:
+#            exec:
+#              command:
+#                - curl
+#                - -f
+#                - http://hl-ghostfolio-lb:{{ .Values.ghostfolioport }}/api/v1/health
+#            failureThreshold: 5
+#            periodSeconds: 10
+#            timeoutSeconds: 5
       restartPolicy: Always

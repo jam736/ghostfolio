@@ -80,7 +80,13 @@ spec:
           livenessProbe:
             exec:
               command:
-                - pg_isready -d ${POSTGRES_DB} -U ${POSTGRES_USER}
+                - pg_isready 
+                - -d
+                - $(POSTGRES_DB)
+                - -h
+                - hl-ghostfolio-postgres-svc
+                - -U
+                - $(POSTGRES_USER)
             failureThreshold: 5
             periodSeconds: 10
             timeoutSeconds: 5

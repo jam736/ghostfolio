@@ -22,12 +22,7 @@ spec:
         io.kompose.service: redis
     spec:
       containers:
-        - image: redis:alpine
-          name: redis
-          args:
-            - redis-server
-            - --requirepass
-            - ""
+        - name: redis
           env:
             - name: ACCESS_TOKEN_SALT
               valueFrom:
@@ -79,10 +74,21 @@ spec:
                 configMapKeyRef:
                   key: REDIS_PORT
                   name: env
+          image: redis:alpine
+          args:
+            - redis-server
+            - --requirepass
+            - $(REDIS_PASSWORD)
           livenessProbe:
             exec:
               command:
-                - redis-cli --pass  ping | grep PONG
+                - redis-cli
+                - --pass
+                - $(REDIS_PASSWORD)
+                - ping
+                - |
+                - grep
+                - PONG
             failureThreshold: 5
             periodSeconds: 10
             timeoutSeconds: 5
